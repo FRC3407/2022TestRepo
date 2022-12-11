@@ -1,10 +1,14 @@
 # 2022TestRepo
+## This ReadMe has been used as practice for learning how to merge conflicts and handle branches and PRs.  This whole repo is used for such testing.
+
 # Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 # read me please
 # I need a nap
 
 
 __this is some bold text.__ *this is some italic text.*
+
+
 
 
 
