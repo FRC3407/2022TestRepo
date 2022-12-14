@@ -17,5 +17,8 @@ public final class constants {
     public static final double drivebase_kP = 3.5176;
 
     public static final double trackwidth = Units.inchesToMeters(21.819);
+    public static final double srx_mag_units_per_revolution = 4096.0;
+    public static final double drive_wheel_diameter_meters = Units.inchesToMeters(6.0);
+    public static final double drivebase_max_voltage = 10.0;
 
 }
