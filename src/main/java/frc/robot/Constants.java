@@ -19,8 +19,11 @@ public final class Constants {
     public static final double srx_mag_units_per_revolution = 4096.0;
 
     public static final double drivewheel_diameter_meters = Units.inchesToMeters(6.0);
-
     public static final double drivebase_max_voltage = 10.0; 
+
+    public static final double ramsete_B = 2.0;
+    public static final double ramsete_Zeta = 0.7;
+
 
 
     
