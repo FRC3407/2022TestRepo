@@ -1,42 +1,45 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
-// Amelia was here
+
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.MotorController;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
-import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-/**
- * The VM is configured to automatically run this class, and to call the functions corresponding to
- * each mode, as described in the TimedRobot documentation. If you change the name of this class or
- * the package after creating this project, you must also update the manifest file in the resource
- * directory.
+
+/**this is a code, a drive code
+ * made by patricasplitlump(seila)...sorta.
  */
 public class Robot extends TimedRobot {
-  //Remember to change the imports to the correct ones for the robot that you are using
-  private final PWMVictorSPX m_leftfrontDrive = new PWMVictorSPX(0);
-  private final PWMVictorSPX m_rightfrontDrive = new PWMVictorSPX(3);
-  private final PWMVictorSPX m_leftbackDrive = new PWMVictorSPX(1);
-  private final PWMVictorSPX m_rightbackDrive = new PWMVictorSPX(2);
-  private final MotorControllerGroup left_side = new MotorControllerGroup(m_leftfrontDrive, m_leftbackDrive);
-  private final MotorControllerGroup right_side = new MotorControllerGroup(m_rightfrontDrive, m_rightbackDrive);
-  private final Joystick m_leftStick = new Joystick(0);
-  private final Joystick m_rightStick = new Joystick(1);
   private DifferentialDrive m_myRobot;
+  private Joystick m_leftStick = new Joystick(1);
+  private Joystick m_rightStick  = new Joystick(2);
 
-  
-   @Override
+  private final MotorController m_leftMotor = new WPI_TalonSRX(0);
+  private final MotorController m_rightMotor = new WPI_TalonSRX(2);
+
+  private final MotorController m_leftMotor_2 = new WPI_TalonSRX(1);
+  private final MotorController m_rightMotor_2 = new WPI_TalonSRX(3);
+  //Motor values might work, they might not, who knows, because i dont
+
+  private final MotorControllerGroup left = new MotorControllerGroup(m_leftMotor, m_leftMotor_2);
+  private final MotorControllerGroup right = new MotorControllerGroup(m_rightMotor, m_rightMotor_2);
+
+  @Override
   public void robotInit() {
     // We need to invert one side of the drivetrain so that positive voltages
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
-    right_side.setInverted(true);
+    m_rightMotor.setInverted(true);
 
-    m_myRobot = new DifferentialDrive(left_side, right_side);
+    m_myRobot = new DifferentialDrive(left, right);
+    m_leftStick = new Joystick(1);
+    m_rightStick = new Joystick(2);
   }
 
   @Override
