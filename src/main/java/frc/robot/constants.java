@@ -21,4 +21,7 @@ public final class constants {
     public static final double drive_wheel_diameter_meters = Units.inchesToMeters(6.0);
     public static final double drivebase_max_voltage = 10.0;
 
+    public static final double ramsete_B = 2.0;
+    public static final double ramsete_Zeta = 0.7;
+
 }
